@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# Check if an argument is provided
+if [[ $# -eq 0 ]]; then
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit 1
+fi
+
+# Define the file paths
+PID_FILE="/var/run/my_process.pid"
+LOG_FILE="/tmp/my_process"
+
+# Function to start the process
+start_process() {
+    # Check if the process is already running
+    if [[ -f "$PID_FILE" ]]; then
+        echo "manage_my_process is already running."
+        exit 1
+    fi
+
+    # Start the process
+    ./manage_my_process &
+    echo $! > "$PID_FILE"
+    echo "manage_my_process started"
+}
+
+# Function to stop the process
+stop_process() {
+    # Check if the process is running
+    if [[ ! -f "$PID_FILE" ]]; then
+        echo "manage_my_process is not running."
+        exit 1
+    fi
+
+    # Stop the process
+    pid=$(cat "$PID_FILE")
+    kill "$pid"
+    rm "$PID_FILE"
+    echo "manage_my_process stopped"
+}
+
+# Function to restart the process
+restart_process() {
+    stop_process
+    start_process
+    echo "manage_my_process restarted"
+}
+
+# Check the argument passed
+case "$1" in
+    start)
+        start_process
+        ;;
+    stop)
+        stop_process
+        ;;
+    restart)
+        restart_process
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0
