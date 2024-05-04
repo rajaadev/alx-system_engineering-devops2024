@@ -5,7 +5,6 @@
 
 /**
  * infinite_while - Infinite loop
- *
  * Return: Always 0.
  */
 int infinite_while(void)
@@ -16,7 +15,6 @@ int infinite_while(void)
     }
     return (0);
 }
-
 /**
  * main - Entry point
  *
