@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times, but on the 9th iteration, it says "Hi" after "Best School"
+
+# Initializing counter
+counter=0
+
+# Using a while loop to display "Best School" 10 times
+while [ $counter -lt 10 ]; do
+    # Incrementing counter
+    ((counter++))
+    
+    # Checking if it's the 9th iteration
+    if [ $counter -eq 9 ]; then
+        echo "Best School"
+        echo "Hi"
+    else
+        echo "Best School"
+    fi
+done
