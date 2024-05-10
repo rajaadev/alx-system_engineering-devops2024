@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Extract and display only the listening TCP and UDP ports
-echo "Active Internet connections (only servers)"
-echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
-netstat -tuln | awk '$NF ~ /^\/.*$/ {print $1,$2,$4,$7}' | while read proto recvq sendq local foreign state pid_program; do
-    if [[ "$local" != "*:*" ]]; then
-        port=$(echo "$local" | awk -F':' '{print $NF}')
-        pid=$(echo "$pid_program" | awk -F'/' '{print $1}')
-        program=$(echo "$pid_program" | awk -F'/' '{print $NF}')
-        echo "$proto $recvq $sendq *:$port *:* $state $pid/$program"
-    fi
-done
+# Check if an argument is passed
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
+    exit 1
+fi
+
+# Ping the IP address 5 times
+ping -c 5 "$1"
