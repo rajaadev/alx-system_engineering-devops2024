@@ -7,12 +7,14 @@ revert_changes() {
   sudo sed -i '/^127\.0\.0\.2[[:space:]]localhost/d' /etc/hosts
   sudo sed -i '/^8\.8\.8\.8[[:space:]]facebook\.com/d' /etc/hosts
 }
+
 # Check if the --revert option is provided
 if [[ "$1" == "--revert" ]]; then
   revert_changes
   echo "Changes reverted. localhost now resolves to 127.0.0.1 and facebook.com to default."
   exit 0
 fi
+
 # Update /etc/hosts file to set localhost
 # to 127.0.0.2 and facebook.com to 8.8.8.8
 revert_changes # Remove existing entries to avoid duplication
