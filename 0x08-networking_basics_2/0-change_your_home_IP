@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 # This script configures the hosts file on an Ubuntu server to map localhost to 127.0.0.2 and facebook.com to 8.8.8.8
-
 # Function to revert changes
 revert_changes() {
   sudo sed -i '/^127\.0\.0\.2[[:space:]]localhost/d' /etc/hosts
   sudo sed -i '/^8\.8\.8\.8[[:space:]]facebook\.com/d' /etc/hosts
 }
-
 # Check if the --revert option is provided
 if [[ "$1" == "--revert" ]]; then
   revert_changes
