@@ -13,3 +13,4 @@ sudo sed -i \
 sudo sed -i \
   's/^127\.0\.0\.1[[:space:]]facebook\.com/8.8.8.8 facebook.com/g' \
   /etc/hosts
+echo "Changes applied. localhost now resolves to 127.0.0.2 and facebook.com to 8.8.8.8."
