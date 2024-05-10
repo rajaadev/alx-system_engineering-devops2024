@@ -5,5 +5,11 @@
 
 # Update /etc/hosts file to set localhost
 #to 127.0.0.2 and facebook.com to 8.8.8.8
-sudo sed -i 's/^127.0.0.1[[:space:]]localhost/127.0.0.1 localhost\n127.0.0.2 localhost/g' /etc/hosts
-sudo sed -i 's/^127.0.0.1[[:space:]]facebook.com/8.8.8.8 facebook.com/g' /etc/hosts
+
+sudo sed -i \
+  's/^127\.0\.0\.1[[:space:]]localhost/127.0.0.1 localhost\n127.0.0.2 localhost/g' \
+  /etc/hosts
+
+sudo sed -i \
+  's/^127\.0\.0\.1[[:space:]]facebook\.com/8.8.8.8 facebook.com/g' \
+  /etc/hosts
