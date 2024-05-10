@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
+# This script displays listening ports and their associated PID/Program name.
 
+# Display active internet connections (only servers)
 netstat -l -p
