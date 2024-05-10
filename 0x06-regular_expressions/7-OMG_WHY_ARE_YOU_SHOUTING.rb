@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
 # Output the provided test string
-puts ARGV[0].scan(/^[A-Z]+$/).join 
+puts ARGV[0].scan(/[A-Z]+/).join 
