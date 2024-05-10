@@ -1,10 +1,21 @@
 #!/bin/bash
 
-# Check if an argument is passed
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
-fi
+# Display active internet connections (only servers)
+echo "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
 
-# Ping the IP address 5 times
-ping -c 5 "$1"
+# Display listening TCP ports
+netstat -tuln | awk '$NF ~ /^[0-9\/]+$/ {print "tcp",$6,$7}' | while read proto recvq sendq local pid_program; do
+    # Extract PID and program name
+    pid=$(echo "$pid_program" | awk -F'/' '{print $1}')
+    program=$(echo "$pid_program" | awk -F'/' '{print $NF}')
+    echo "$proto $recvq $sendq $local *:* $pid/$program"
+done
+
+# Display listening UDP ports
+netstat -uln | awk '$NF ~ /^[0-9\/]+$/ {print "udp",$6,$7}' | while read proto recvq sendq local pid_program; do
+    # Extract PID and program name
+    pid=$(echo "$pid_program" | awk -F'/' '{print $1}')
+    program=$(echo "$pid_program" | awk -F'/' '{print $NF}')
+    echo "$proto $recvq $sendq $local *:* $pid/$program"
+done
