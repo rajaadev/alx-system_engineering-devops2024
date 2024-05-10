@@ -11,10 +11,8 @@ if [[ "$1" == "--revert" ]]; then
   echo "Changes reverted. localhost now resolves to 127.0.0.1 and facebook.com to default."
   exit 0
 fi
-
 # Update /etc/hosts file to set localhost to 127.0.0.2 and facebook.com to 8.8.8.8
 revert_changes # Remove existing entries to avoid duplication
 sudo sed -i '1i127.0.0.2 localhost' /etc/hosts
 sudo sed -i '1i8.8.8.8 facebook.com' /etc/hosts
-
 echo "Changes applied. localhost now resolves to 127.0.0.2 and facebook.com to 8.8.8.8."
