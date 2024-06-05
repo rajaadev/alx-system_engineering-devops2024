@@ -1,9 +1,60 @@
-<mxfile host="app.diagrams.net" modified="2024-06-05T09:03:26.397Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" version="24.4.13" etag="x_juVqrcaiUevxc8yijA" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-05T09:16:00.380Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" etag="PmHIcMyB8TdpbkduYOqf" version="24.4.13" type="github">
   <diagram name="Page-1" id="LlzH9PG6ZKf_lSRLxqST">
-    <mxGraphModel>
+    <mxGraphModel dx="1537" dy="871" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-3" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="73" y="86" as="sourcePoint" />
+            <mxPoint x="76" y="161" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-6" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-35" y="-5" width="246" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="VkuN5-D98ATPOjVcQrmc-6">
+          <mxGeometry y="5" width="246" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-2" value="&lt;span class=&quot;hljs-keyword&quot;&gt;User&lt;/span&gt;&amp;nbsp;(Browser requests&amp;nbsp;&lt;br&gt;&amp;nbsp;www.foobar.com)&amp;nbsp;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="VkuN5-D98ATPOjVcQrmc-6">
+          <mxGeometry x="2" width="226" height="81" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-7" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-24" y="175" width="246" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-8" value="DNS Server      &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt; (Resolves www.foobar.com &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;to&lt;/span&gt; IP &lt;span class=&quot;hljs-number&quot;&gt;8.8&lt;/span&gt;&lt;span class=&quot;hljs-number&quot;&gt;.8&lt;/span&gt;&lt;span class=&quot;hljs-number&quot;&gt;.8&lt;/span&gt;)&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="VkuN5-D98ATPOjVcQrmc-7">
+          <mxGeometry y="5" width="246" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-10" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="86.5" y="273" as="sourcePoint" />
+            <mxPoint x="89.5" y="348" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-12" value="Web Server       &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;       (Nginx)         &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;     (IP: &lt;span class=&quot;hljs-number&quot;&gt;8.8&lt;/span&gt;&lt;span class=&quot;hljs-number&quot;&gt;.8&lt;/span&gt;&lt;span class=&quot;hljs-number&quot;&gt;.8&lt;/span&gt;)&amp;nbsp; &amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-24" y="356" width="254" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-13" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=6.08;curved=1;width=13;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="233" y="401" as="sourcePoint" />
+            <mxPoint x="289" y="403" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-14" value="Application Server  &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;  (Processes &lt;span class=&quot;hljs-keyword&quot;&gt;dynamic&lt;/span&gt;   &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt; content, interacts &lt;span class=&quot;hljs-keyword&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;      database)&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="293" y="351" width="254" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-16" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="425" y="348" as="sourcePoint" />
+            <mxPoint x="422" y="262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-17" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="301" y="160" width="246" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="VkuN5-D98ATPOjVcQrmc-18" value="Database         &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;       (MySQL)         &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;  (Stores &lt;span class=&quot;hljs-keyword&quot;&gt;and&lt;/span&gt; retrieves&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;      data)            &lt;span class=&quot;hljs-operator&quot;&gt;|&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="VkuN5-D98ATPOjVcQrmc-17">
+          <mxGeometry y="5" width="246" height="78" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
