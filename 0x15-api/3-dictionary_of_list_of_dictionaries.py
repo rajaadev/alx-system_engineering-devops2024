@@ -1,4 +1,19 @@
 #!/usr/bin/python3
+"""
+Fetches user and todo data from JSONPlaceholder API and creates
+a JSON file that maps user IDs to their tasks.
+
+The output file, 'todo_all_employees.json', contains:
+{
+    "user_id": [
+        {"username": "USERNAME", "task": "TASK_TITLE", "completed":
+        TASK_COMPLETED_STATUS},
+        ...
+    ],
+    ...
+}
+"""
+
 import json
 import requests
 
