@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script that uses a REST API to gather information about an employee's TODO list progress."""
+"""Script that uses a REST API to gather information about an employee's TODO
+list progress."""
 
 import requests
 import sys
@@ -49,4 +50,3 @@ if __name__ == "__main__":
         sys.exit(1)
 
     get_employee_todo_progress(employee_id)
-
