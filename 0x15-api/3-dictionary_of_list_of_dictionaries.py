@@ -12,22 +12,29 @@ todos_response = requests.get(todos_url)
 users = users_response.json()
 todos = todos_response.json()
 
-# Create a dictionary with user IDs as keys
-tasks_by_user = {}
-for user in users:
-    tasks_by_user[user['id']] = []
+# Create a dictionary with user IDs as keys and usernames
+tasks_by_user = {
+    user['id']: {"username": user['username'], "tasks": []}
+    for user in users
+}
 
 # Populate the dictionary with tasks
 for todo in todos:
     user_id = todo['userId']
-    user = next((u for u in users if u['id'] == user_id), None)
-    if user:
-        task_entry = {
-            "username": user['username'],
-            "task": todo['title'],
-            "completed": todo['completed']
-        }
-        tasks_by_user[user_id].append(task_entry)
+    task_entry = {
+        "task": todo['title'],
+        "completed": todo['completed']
+    }
+    tasks_by_user[user_id]["tasks"].append(task_entry)
+
+# Convert: {user_id: [{"username": ..., "task": ..., "completed": ...}]}
+tasks_by_user = {
+    user_id: [
+        {"username": info["username"], **task}
+        for task in info["tasks"]
+    ]
+    for user_id, info in tasks_by_user.items()
+}
 
 # Write the dictionary to a JSON file
 with open('todo_all_employees.json', 'w') as f:
