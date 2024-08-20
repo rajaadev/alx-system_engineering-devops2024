@@ -4,11 +4,14 @@
 import requests
 import sys
 
+
 def get_employee_todo_progress(employee_id):
     """Fetch and display employee TODO list progress based on their ID."""
     # URLs for user and TODO data
     url_user = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    url_todos = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    url_todos = (
+        f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    )
 
     # Fetching user data
     user_response = requests.get(url_user)
@@ -26,7 +29,8 @@ def get_employee_todo_progress(employee_id):
     total_tasks = len(todos_data)
     done_tasks = [task for task in todos_data if task.get('completed')]
 
-    print(f"Employee {employee_name} is done with tasks({len(done_tasks)}/{total_tasks}):")
+    print(f"Employee {employee_name} is done with tasks({len(done_tasks)}/"
+          f"{total_tasks}):")
 
     # Print titles of completed tasks
     for task in done_tasks:
