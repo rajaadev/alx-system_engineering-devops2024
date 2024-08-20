@@ -13,11 +13,17 @@ def number_of_subscribers(subreddit):
     headers = {
         'User-Agent': 'Custom User Agent'
     }
-    response = requests.get(url, headers=headers)
-
-    # Check for valid response and handle invalid subreddit
-    if response.status_code == 200:
-        data = response.json()
-        return data['data']['subscribers']
-    else:
+    try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
+        if response.status_code == 200:
+            data = response.json()
+            return data['data']['subscribers']
+        elif response.status_code == 302:
+            # Redirect error code; assume invalid subreddit
+            return 0
+        else:
+            # Other HTTP errors
+            return 0
+    except requests.RequestException:
+        # Handle network or request errors
         return 0
